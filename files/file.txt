@@ -1,0 +1,14 @@
+/*  Hola este es un comentario Multilinea */
+PROGRAMA OPERACION;
+VARIABLES
+  A, B, C, D, E, F;  # comentario
+INICIO
+  A <-- 10;
+  C <-- 5;
+  LEER B;
+  D <-- 0;
+  E <-- 20;
+  SI K < A + 2 ENTONCES
+    F <-- (A + B) / E;
+    ESCRIBIR F;
+FIN;
