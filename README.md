@@ -3,8 +3,8 @@
 Este proyecto es un ejemplo básico que demuestra cómo usar ANTLR (ANother Tool for Language Recognition) con Go para crear un parser para un lenguaje simple (una calculadora aritmética).
 
 ## Componentes Principales
-
-1.  **Definición de la Gramática (`Calc.g4`)**:
+ 
+1.  **Definición de la Gramática (`Programa.g4`)**:
     *   Este archivo es el corazón del parser. Define las reglas léxicas (tokens como `INT`) y sintácticas (reglas como `expr` para sumas, restas, multiplicaciones, divisiones y paréntesis) del lenguaje de la calculadora.
 
 2.  **Generación del Parser (Implícito + `parser/` dir)**:
@@ -23,25 +23,9 @@ Este proyecto es un ejemplo básico que demuestra cómo usar ANTLR (ANother Tool
 4.  **Dependencias (`go.mod`, `go.sum`)**:
     *   Estos archivos gestionan las dependencias del proyecto, principalmente las librerías runtime de ANTLR necesarias para que el código generado funcione.
 
-## Flujo de Datos
-
-```mermaid
-graph LR
-    subgraph Definición y Generación
-        A[Calc.g4 (Gramática)] -- Genera --> B[parser/ (Código Go Generado)];
-    end
-    subgraph Ejecución
-        C[Entrada (String: "3 + 4 * 5")] --> D[main.go];
-        E[Runtime ANTLR Go] --> D;
-        B --> D;
-        D -- Usa --> F[Lexer (parser/calc_lexer.go)];
-        F -- Tokens --> G[Parser (parser/calc_parser.go)];
-        G -- Construye --> H[Árbol de Sintaxis];
-        D -- Imprime --> I[Salida (Árbol en Texto)];
-        J[CustomErrorListener] --> G;
-    end
-```
-
+5.  go run main.go // EJECUCION
+    antlr4 -Dlanguage=Go Programa.g4 // DENTRO DE LA CARPETA PARSER
+   
 ## Resumen
 
 Es una arquitectura estándar para un proyecto ANTLR: defines una gramática, generas el parser, y luego usas ese parser en tu aplicación principal para analizar texto que se ajuste a esa gramática. El foco de este ejemplo está en el *análisis* (parsing) y no en la *evaluación* de la expresión.
