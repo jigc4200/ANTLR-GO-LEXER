@@ -9,6 +9,7 @@ import (
 	"github.com/antlr4-go/antlr/v4"
 )
 
+// ANALISIS USANDO ANTLR
 type CustomErrorListener struct {
 	*antlr.DefaultErrorListener
 	inputText     string

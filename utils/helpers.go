@@ -8,6 +8,8 @@ import (
 	"github.com/antlr4-go/antlr/v4"
 )
 
+// CONTEO DE CARACTERES, LÍNEAS Y TOKENS
+// Resultados del conteo de caracteres, líneas y tokens
 func countChars(data []byte, wg *sync.WaitGroup, res *Result) {
 	defer wg.Done()
 	res.Chars = len(data)

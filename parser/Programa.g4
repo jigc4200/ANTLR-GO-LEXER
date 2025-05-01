@@ -108,6 +108,8 @@ OPERADOR_DECREMENTO        : '--' ;
 // Ignorar espacios, tabs, saltos de línea
 WS             : [ \t\r\n]+ -> skip ;
 
+
 // Ignorar comentarios con #
 COMMENT        : '#' ~[\r\n]* ;  // mantener los comentarios de una sola línea
 COMMENT_MULTILINE : '/*' .*? '*/' ; // mantener los comentarios multilínea
+

@@ -13,6 +13,8 @@ import (
 	"github.com/antlr4-go/antlr/v4"
 )
 
+// ANALISIS EN TIEMPO REAL
+
 type Result struct {
 	Chars  int
 	Lines  int
